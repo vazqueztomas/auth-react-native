@@ -2,16 +2,18 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import {useNavigation} from '@react-navigation/native';
 
 const NewPasswordScreen = () => {
-  const [username, setUsername] = useState('');
-
-  const onResetPasswordPress = () => {
-    console.warn('Recuperar contraseña');
+  const [code, setCode] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const navigation = useNavigation();
+  const onNewPasswordPress = () => {
+    navigation.navigate('Home');
   };
 
   const onSignInPress = () => {
-    console.warn('on sign in');
+    navigation.navigate('SignIn');
   };
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -20,17 +22,17 @@ const NewPasswordScreen = () => {
 
         <CustomInput
           placeholder={'Ingresa el código que recibiste'}
-          value={username}
-          setValue={setUsername}
+          value={code}
+          setValue={setCode}
         />
         <CustomInput
           placeholder={'Nueva contraseña'}
-          value={username}
-          setValue={setUsername}
+          value={newPassword}
+          setValue={setNewPassword}
         />
 
         <CustomButton
-          onPress={onResetPasswordPress}
+          onPress={onNewPasswordPress}
           text="Cambiar contraseña"
           type={'PRIMARY'}
         />

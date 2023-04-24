@@ -2,19 +2,21 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import {useNavigation} from '@react-navigation/native';
 
 const ConfirmEmailScreen = () => {
   const [code, setCode] = useState('');
+  const navigation = useNavigation();
 
   const onConfirmationPress = () => {
-    console.warn('Confirmation');
+    navigation.navigate('Home');
   };
 
   const onResendCodePress = () => {
     console.warn('Back');
   };
   const onGoBackPress = () => {
-    console.warn('go back');
+    navigation.navigate('SignUp');
   };
   return (
     <ScrollView showsVerticalScrollIndicator={false}>

@@ -11,21 +11,26 @@ import Logo from '../../../assets/images/logo.png';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import SocialSingInButtons from '../../components/SocialSignInButtons/SocialSingInButtons';
+import {useNavigation} from '@react-navigation/native';
 
 const SignInScreen = () => {
   const {height} = useWindowDimensions();
+  const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const onSignInPress = () => {
     console.warn('on sing in');
+    //validate user
+
+    navigation.navigate('Home');
   };
   const onForgotPasswordPress = () => {
-    console.warn('onForgotPasswordPress');
+    navigation.navigate('ForgotPassword');
   };
 
   const onSignUpPress = () => {
-    console.warn('on sign up');
+    navigation.navigate('SignUp');
   };
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -46,11 +51,15 @@ const SignInScreen = () => {
           setValue={setPassword}
           secureTextEntry={true}
         />
-        <CustomButton onPress={onSignInPress} text="Sign In" type={'PRIMARY'} />
+        <CustomButton
+          onPress={onSignInPress}
+          text="Ingresar"
+          type={'PRIMARY'}
+        />
 
         <CustomButton
           onPress={onForgotPasswordPress}
-          text="Forgot password?"
+          text="Olvidaste tu contraseña?"
           type="TERTIARY"
         />
         <SocialSingInButtons />

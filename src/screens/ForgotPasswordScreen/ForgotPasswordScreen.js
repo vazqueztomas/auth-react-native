@@ -3,23 +3,18 @@ import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import SocialSingInButtons from '../../components/SocialSignInButtons/SocialSingInButtons';
+import {useNavigation} from '@react-navigation/native';
 
 const ForgotPasswordScreen = () => {
+  const navigation = useNavigation();
   const [username, setUsername] = useState('');
 
-  const onResetPasswordPress = () => {
-    console.warn('Recuperar contraseña');
+  const onGoBack = () => {
+    navigation.navigate('SignIn');
   };
 
-  const onTermsOfUsePress = () => {
-    console.warn('Terms of use');
-  };
-  const onPolityPrivacyPress = () => {
-    console.warn('onPolityPrivacy');
-  };
-
-  const onSignInPress = () => {
-    console.warn('on sign in');
+  const onForgotPasswordPress = () => {
+    navigation.navigate('NewPassword');
   };
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -33,13 +28,13 @@ const ForgotPasswordScreen = () => {
         />
 
         <CustomButton
-          onPress={onResetPasswordPress}
+          onPress={onForgotPasswordPress}
           text="Recuperar contraseña"
           type={'PRIMARY'}
         />
 
         <CustomButton
-          onPress={onSignInPress}
+          onPress={onGoBack}
           text="Volver atrás"
           type={'TERTIARY'}
         />

@@ -35,6 +35,7 @@ const dict = {
     'Customized signup': 'Registrate',
     'Full Name': 'Nombre completo',
     'Reset your password': 'Reseteá tu contraseña',
+    Hello: 'Hola',
   },
 };
 

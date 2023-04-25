@@ -1,6 +1,5 @@
 import {
   View,
-  Text,
   Image,
   StyleSheet,
   useWindowDimensions,

@@ -2,7 +2,6 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import SocialSingInButtons from '../../components/SocialSignInButtons/SocialSingInButtons';
 import {useNavigation} from '@react-navigation/native';
 
 const ForgotPasswordScreen = () => {

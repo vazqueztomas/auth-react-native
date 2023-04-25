@@ -8,8 +8,8 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import Navigation from './src/navigation';
-import {Amplify, Auth} from 'aws-amplify';
-import {withAuthenticator, AmplifyTheme} from 'aws-amplify-react-native';
+import {Amplify} from 'aws-amplify';
+import {withAuthenticator} from 'aws-amplify-react-native';
 import config from './src/aws-exports';
 import {I18n} from 'aws-amplify';
 
@@ -73,11 +73,6 @@ const signUpConfig = {
       type: 'password',
     },
   ],
-};
-
-const customTheme = {
-  ...AmplifyTheme,
-  button: {...AmplifyTheme.button, backgroundColor: 'black'},
 };
 
 const styles = StyleSheet.create({

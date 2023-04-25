@@ -1,15 +1,15 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignInScreen from '../screens/SignInScreen/SignInScreen';
-
 import SignUpScreen from '../screens/SignUpScreen/SignUpScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen/ForgotPasswordScreen';
 import NewPasswordScreen from '../screens/NewPasswordScreen/NewPasswordScreen';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import ConfirmEmailScreen from '../screens/ConfirmEmailScreen/ConfirmEmailScreen';
+
 const Stack = createNativeStackNavigator();
+
 const Navigation = () => {
   return (
     <NavigationContainer>

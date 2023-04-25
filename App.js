@@ -11,6 +11,7 @@ import Navigation from './src/navigation';
 import {Amplify, Auth} from 'aws-amplify';
 import {withAuthenticator, AmplifyTheme} from 'aws-amplify-react-native';
 import config from './src/aws-exports';
+import {I18n} from 'aws-amplify';
 
 Amplify.configure(config);
 
@@ -22,6 +23,22 @@ function App() {
     </SafeAreaView>
   );
 }
+
+I18n.setLanguage('es');
+
+const dict = {
+  es: {
+    'Enter your username': 'Ingresa tu usuario',
+    'Enter your password': 'Ingresa tu contraseña',
+    'Sign Up': 'Registrate',
+    'Please Sign In / Sign Up': 'Registrarse / Iniciar sesión',
+    'Customized signup': 'Registrate',
+    'Full Name': 'Nombre completo',
+    'Reset your password': 'Reseteá tu contraseña',
+  },
+};
+
+I18n.putVocabularies(dict);
 
 const signUpConfig = {
   header: 'Customized signup',
@@ -70,4 +87,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withAuthenticator(App, {signUpConfig, theme: customTheme});
+export default withAuthenticator(App, {
+  socialProviders: ['google'],
+  signUpConfig,
+  includeGreetings: true,
+});
